@@ -6,28 +6,23 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist/'
+    //publicPath: 'dist/'   ← remove this line
   },
   mode: 'development',
   module: {
     rules: [
+	// Keep all the rules you have, and add the one below:
       {
-        test: /\.css$/i,
-        use: [ 'style-loader', 'css-loader' ]
-      },
-      {
-        test: /\.scss$/i,
-        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-      },
-      {
-        test: /\.(gif|jpg|jpeg|png)$/i,
+        test: /index.html$/i,
         use: [
           {
             loader: 'file-loader',
-          },
-        ],
-      },
-      
+            options: {
+              name: 'index.html'
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: [
