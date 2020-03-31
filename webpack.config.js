@@ -33,7 +33,7 @@ module.exports = {
           },
         ],
       },
-
+     
       {
         test: /index.html$/i,
         use: [

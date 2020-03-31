@@ -6,8 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all';
 import '../index.html';
+// import data from '../data/athlete.json';
  
 $(document).ready( () => {
+
+    document.body.innerHTML = JSON.stringify(data);
  
     // Print the current time
     $('.js-content').html(`<i class="fas fa-clock"></i> ${ getDateString() }`);
